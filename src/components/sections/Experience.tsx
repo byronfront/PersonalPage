@@ -22,9 +22,6 @@ export function Experience({ locale, dict }: { locale: Locale; dict: Dictionary 
             lines="reveal"
             className={`t-h2 ${styles.title}`}
           />
-          <p className={styles.introText} data-reveal>
-            {copy.intro}
-          </p>
         </div>
 
         <div className={styles.entries}>

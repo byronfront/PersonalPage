@@ -38,8 +38,7 @@ export const es = {
   hero: {
     eyebrow: "Frontend Developer",
     statement: { lead: "Precisión para", accent: "cuestionar", tail: "lo evidente." },
-    intro:
-      "Desarrollo interfaces con React y TypeScript desde hace unos tres años: formularios complejos, listados, filtros e integraciones con APIs, respaldados por pruebas que permiten cambiarlos con confianza.",
+    intro: "Tres años con React y TypeScript: formularios, listados, APIs y pruebas.",
     ctaWork: "Ver trabajo seleccionado",
     ctaContact: "Iniciar una conversación",
     figure: "Fig. 01",
@@ -49,33 +48,33 @@ export const es = {
   about: {
     label: "Sobre mí",
     title: { lead: "Lógica que deja", accent: "espacio", tail: "para la intuición." },
-    lead: "Entiendo el frontend como el lugar donde la lógica de un producto se encuentra con una persona. Ahí, el rigor y la sensibilidad no compiten: se necesitan.",
-    pairsLabel: "Cinco tensiones que guían mi trabajo",
+    lead: "El frontend es donde la lógica de un producto se encuentra con una persona.",
+    pairsLabel: "Tensiones que guían el trabajo",
     pairs: [
       {
         a: "Problema",
         b: "Pregunta",
-        text: "Antes de escribir código intento entender qué se resuelve y para quién. Cuestionar la solución evidente suele revelar una más simple.",
+        text: "Entender qué se resuelve, y para quién, antes de escribir código.",
       },
       {
         a: "Claridad",
         b: "Carácter",
-        text: "Valoro las interfaces que se entienden sin instrucciones: jerarquía clara, estados previstos y errores que explican qué hacer. El carácter llega después, nunca a costa de la claridad.",
+        text: "Que se entienda sin instrucciones. El carácter llega después.",
       },
       {
         a: "Disciplina",
         b: "Curiosidad",
-        text: "Muchas buenas ideas vienen de fuera del código: del diseño editorial, de la tipografía, de cómo otras disciplinas ordenan la información. Conectarlas amplía las respuestas posibles.",
+        text: "Las ideas buenas también vienen de fuera del código.",
       },
       {
         a: "Creatividad",
         b: "Mantenimiento",
-        text: "Una solución ingeniosa que nadie más puede mantener es un problema aplazado. Lo expresivo debe apoyarse en una base predecible: componentes pequeños, tipos explícitos y pruebas.",
+        text: "Lo expresivo se sostiene con componentes pequeños, tipos y pruebas.",
       },
       {
         a: "Tecnología",
         b: "Persona",
-        text: "La tecnología es el medio, no el resultado. Rendimiento, accesibilidad y legibilidad son formas concretas de respeto hacia quien usa la interfaz.",
+        text: "La tecnología es el medio. Quien usa la interfaz es el criterio.",
       },
     ],
     quote: "Lo expresivo funciona mejor sobre una base predecible.",
@@ -90,8 +89,7 @@ export const es = {
   experience: {
     label: "Experiencia",
     title: { lead: "Lo construido", accent: "en equipo", tail: "" },
-    intro:
-      "Interfaces para una plataforma de telemetría: funcionalidad nueva, mantenimiento de lo existente y la colaboración que ambas exigen.",
+    intro: "Plataforma de telemetría, en equipo.",
     labels: {
       role: "Rol",
       period: "Periodo",
@@ -103,8 +101,7 @@ export const es = {
   capabilities: {
     label: "Tecnologías",
     title: { lead: "Herramientas ordenadas por", accent: "función", tail: "" },
-    intro:
-      "Ninguna herramienta trabaja sola. Selecciona una para ver con cuáles se conecta en el trabajo diario.",
+    intro: "Selecciona una herramienta para ver con cuáles se conecta.",
     usage: {
       core: "Uso diario",
       regular: "Uso frecuente",
@@ -153,7 +150,7 @@ export const es = {
   contact: {
     label: "Contacto",
     title: { lead: "Si el problema es", accent: "interesante,", tail: "hablemos." },
-    body: "Abierto a posiciones frontend en equipos de producto y a proyectos freelance con un objetivo claro. Puedes escribirme en español, inglés o ruso.",
+    body: "Posiciones frontend y proyectos freelance. Español, inglés o ruso.",
     channels: {
       email: "Correo",
       linkedin: "LinkedIn",

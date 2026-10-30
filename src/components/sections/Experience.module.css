@@ -6,7 +6,7 @@
 
 .intro {
   row-gap: var(--space-l);
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-xl);
 }
 
 .title {

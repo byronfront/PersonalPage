@@ -47,17 +47,14 @@ export function Capabilities({ locale, dict }: { locale: Locale; dict: Dictionar
             <p className={styles.introText}>{copy.intro}</p>
             <div className={styles.legend}>
               <h3 className="t-mono t-faint">{copy.legendLabel}</h3>
-              <dl>
+              <ul>
                 {levels.map((level) => (
-                  <div key={level} className={styles.legendRow}>
-                    <dt>
-                      <span className={styles.mark} data-usage={level} aria-hidden="true" />
-                      {copy.usage[level]}
-                    </dt>
-                    <dd className="t-faint">{copy.usageLegend[level]}</dd>
-                  </div>
+                  <li key={level} className={styles.legendRow}>
+                    <span className={styles.mark} data-usage={level} aria-hidden="true" />
+                    {copy.usage[level]}
+                  </li>
                 ))}
-              </dl>
+              </ul>
             </div>
           </div>
         </div>

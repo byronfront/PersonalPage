@@ -68,7 +68,6 @@ export function Hero({ locale, dict }: Props) {
 
         <div className={styles.foot}>
           <StructureToggle show={structure.show} hide={structure.hide} hint={structure.hint} />
-          <span className={`t-mono t-faint ${styles.hint}`}>{structure.hint}</span>
         </div>
       </div>
     </section>

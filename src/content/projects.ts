@@ -44,19 +44,19 @@ export const projects: Project[] = [
     year: 2026,
     status: "published",
     summary: {
-      es: "Sitio de Bao, marroquinería de taller en Medellín: catálogo de piezas, bitácora del oficio y encargos, en español, inglés y ruso.",
-      en: "Website for Bao, a leather workshop in Medellín: piece catalogue, workshop notes and commissions, in Spanish, English and Russian.",
-      ru: "Сайт Bao, кожевенной мастерской в Медельине: каталог вещей, записи с верстака и заказы — на испанском, английском и русском.",
+      es: "Marroquinería de taller en Medellín: catálogo, oficio y encargos, en tres idiomas.",
+      en: "Leather workshop in Medellín: catalogue, craft and commissions, in three languages.",
+      ru: "Кожевенная мастерская в Медельине: каталог, ремесло и заказы, на трёх языках.",
     },
     problem: {
-      es: "Un taller que trabaja a mano, por encargo y en lotes pequeños, no encajaba en una tienda genérica. Hacía falta una presencia que explicara el oficio y permitiera encargar una pieza sin convertir el sitio en un carrito.",
-      en: "A workshop that works by hand, to order and in small lots, did not fit a generic shop. It needed a public face that explained the craft and let someone commission a piece without turning the site into a cart.",
-      ru: "Мастерской, которая работает вручную, на заказ и малыми партиями, не подходил шаблонный магазин. Нужно было лицо в сети, которое объясняет ремесло и позволяет заказать вещь без корзины.",
+      es: "Un taller que trabaja a mano y por encargo no encajaba en una tienda genérica.",
+      en: "A workshop that works by hand and to order did not fit a generic shop.",
+      ru: "Мастерской, которая работает вручную и на заказ, не подходил шаблонный магазин.",
     },
     solution: {
-      es: "Un sitio Next.js con rutas por idioma, fichas de catálogo, notas del taller y un camino de encargo por correo o WhatsApp. La interfaz sigue el ritmo del banco: poco inventario, mucho contexto.",
-      en: "A Next.js site with per-language routes, catalogue cards, workshop notes and a commission path over email or WhatsApp. The interface follows the bench: little inventory, a lot of context.",
-      ru: "Сайт на Next.js с маршрутами по языкам, карточками каталога, записями мастерской и заказом через почту или WhatsApp. Интерфейс идёт в ритме верстака: мало вещей, много контекста.",
+      es: "Sitio Next.js con catálogo, bitácora del taller y encargo por correo o WhatsApp. Sin carrito.",
+      en: "A Next.js site with a catalogue, workshop notes and commissions over email or WhatsApp. No cart.",
+      ru: "Сайт на Next.js: каталог, записи мастерской и заказ через почту или WhatsApp. Без корзины.",
     },
     role: {
       es: "Diseño y desarrollo",

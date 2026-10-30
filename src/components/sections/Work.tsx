@@ -119,27 +119,11 @@ function ProjectEntry({
             {project.name}
           </h3>
           <p className={styles.projectSummary}>{project.summary[locale]}</p>
-
-          <dl className={styles.projectFacts}>
-            <div>
-              <dt className="t-mono t-faint">{labels.problem}</dt>
-              <dd>{project.problem[locale]}</dd>
-            </div>
-            <div>
-              <dt className="t-mono t-faint">{labels.solution}</dt>
-              <dd>{project.solution[locale]}</dd>
-            </div>
-            <div>
-              <dt className="t-mono t-faint">{labels.role}</dt>
-              <dd>{project.role[locale]}</dd>
-            </div>
-            <div>
-              <dt className="t-mono t-faint">{labels.stack}</dt>
-              <dd className={styles.projectStack}>
-                {project.stack.map((id) => labelFor(id, locale)).join(" / ")}
-              </dd>
-            </div>
-          </dl>
+          <p className={`t-mono ${styles.projectStack}`}>
+            {project.role[locale]}
+            <span className="t-faint"> · </span>
+            {project.stack.map((id) => labelFor(id, locale)).join(" / ")}
+          </p>
 
           <div className={styles.projectLinks}>
             {project.detail && (

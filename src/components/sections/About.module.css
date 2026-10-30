@@ -68,7 +68,7 @@
   grid-template-columns: 2.25rem 1fr;
   column-gap: var(--gutter);
   row-gap: 0.75rem;
-  padding-block: var(--space-m) var(--space-l);
+  padding-block: var(--space-s) var(--space-m);
   border-bottom: 1px solid var(--line);
 }
 
@@ -173,7 +173,7 @@
 
   .pair {
     grid-template-columns: 2.25rem minmax(0, 1fr) minmax(0, 1.4fr);
-    padding-block: var(--space-l);
+    padding-block: var(--space-m);
   }
 
   .terms {

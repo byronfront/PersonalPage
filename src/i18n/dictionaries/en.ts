@@ -34,8 +34,7 @@ export const en: Dictionary = {
   hero: {
     eyebrow: "Frontend Developer",
     statement: { lead: "Precision to", accent: "question", tail: "the obvious." },
-    intro:
-      "For about three years I have been building interfaces with React and TypeScript: complex forms, data lists, filters and API integrations, backed by tests that make them safe to change.",
+    intro: "Three years with React and TypeScript: forms, lists, APIs and tests.",
     ctaWork: "See selected work",
     ctaContact: "Start a conversation",
     figure: "Fig. 01",
@@ -45,33 +44,33 @@ export const en: Dictionary = {
   about: {
     label: "About",
     title: { lead: "Logic that leaves", accent: "room", tail: "for intuition." },
-    lead: "I see the frontend as the place where the logic of a product meets a person. There, rigour and sensitivity do not compete: they need each other.",
-    pairsLabel: "Five tensions that guide my work",
+    lead: "Frontend is where a product’s logic meets a person.",
+    pairsLabel: "Tensions that guide the work",
     pairs: [
       {
         a: "Problem",
         b: "Question",
-        text: "Before writing code I try to understand what is being solved, and for whom. Questioning the obvious solution often reveals a simpler one.",
+        text: "Understand what is being solved, and for whom, before writing code.",
       },
       {
         a: "Clarity",
         b: "Character",
-        text: "I value interfaces that make sense without instructions: clear hierarchy, anticipated states, errors that explain what to do next. Character comes after, never at the expense of clarity.",
+        text: "It should make sense without instructions. Character comes after.",
       },
       {
         a: "Discipline",
         b: "Curiosity",
-        text: "Many good ideas come from outside code: editorial design, typography, the way other disciplines organise information. Connecting them widens the range of possible answers.",
+        text: "Good ideas also come from outside code.",
       },
       {
         a: "Creativity",
         b: "Maintenance",
-        text: "A clever solution nobody else can maintain is a postponed problem. Expression should rest on a predictable base: small components, explicit types and tests.",
+        text: "Expression rests on small components, types and tests.",
       },
       {
         a: "Technology",
         b: "People",
-        text: "Technology is the means, not the outcome. Performance, accessibility and legibility are concrete forms of respect for the person using the interface.",
+        text: "Technology is the means. The person using it is the measure.",
       },
     ],
     quote: "Expression works best on a predictable foundation.",
@@ -86,8 +85,7 @@ export const en: Dictionary = {
   experience: {
     label: "Experience",
     title: { lead: "Built as part of", accent: "a team", tail: "" },
-    intro:
-      "Interfaces for a telemetry platform: new functionality, care for what already exists, and the collaboration both of them require.",
+    intro: "Telemetry platform, as part of a team.",
     labels: {
       role: "Role",
       period: "Period",
@@ -99,8 +97,7 @@ export const en: Dictionary = {
   capabilities: {
     label: "Technologies",
     title: { lead: "Tools arranged by", accent: "purpose", tail: "" },
-    intro:
-      "No tool works alone. Select one to see what it connects with in everyday work.",
+    intro: "Select a tool to see what it connects with.",
     usage: {
       core: "Daily use",
       regular: "Frequent use",
@@ -149,7 +146,7 @@ export const en: Dictionary = {
   contact: {
     label: "Contact",
     title: { lead: "If the problem is", accent: "interesting,", tail: "let's talk." },
-    body: "Open to frontend roles in product teams and to freelance projects with a clear goal. You can write to me in English, Spanish or Russian.",
+    body: "Frontend roles and freelance work. English, Spanish or Russian.",
     channels: {
       email: "Email",
       linkedin: "LinkedIn",

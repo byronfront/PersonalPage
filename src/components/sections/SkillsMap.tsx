@@ -53,7 +53,6 @@ export function SkillsMap({ groups, labels }: Props) {
                 04.{gi + 1}
               </span>
               <h3 className={styles.groupTitle}>{group.title}</h3>
-              <p className={styles.groupSummary}>{group.summary}</p>
             </div>
             <ul className={styles.tools}>
               {group.tools.map((tool) => (
