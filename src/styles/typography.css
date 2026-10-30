@@ -1,0 +1,221 @@
+/*
+ * Self-hosted fonts (SIL Open Font License, see /public/fonts/*.txt).
+ * Latin and Cyrillic subsets are split with unicode-range, so Spanish and
+ * English pages never download Cyrillic files and vice versa.
+ */
+
+/* Cormorant — editorial display serif */
+@font-face {
+  font-family: "Cormorant";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/cormorant-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Cormorant";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/cormorant-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Cormorant";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/cormorant-latin-wght-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Cormorant";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/cormorant-cyrillic-wght-italic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Onest — interface and reading sans */
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/onest-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* IBM Plex Mono — indices, labels, technical references */
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-cyrillic-400-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-cyrillic-500-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Metric-matched fallbacks reduce layout shift while web fonts load. */
+@font-face {
+  font-family: "Cormorant Fallback";
+  src: local("Georgia"), local("Times New Roman");
+  size-adjust: 88%;
+  ascent-override: 102%;
+  descent-override: 32%;
+}
+@font-face {
+  font-family: "Onest Fallback";
+  src: local("Arial"), local("Helvetica");
+  size-adjust: 102%;
+  ascent-override: 98%;
+  descent-override: 26%;
+}
+
+/* ------------------------------------------------------------------ */
+
+html {
+  font-family: var(--font-sans);
+  font-size: 100%;
+  line-height: var(--lh-body);
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-size: var(--fs-body);
+  font-weight: 380;
+  letter-spacing: 0.002em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: inherit;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  hyphens: manual;
+}
+
+strong {
+  font-weight: 560;
+}
+
+/* Display voice: the serif speaks only at large sizes. */
+.t-display {
+  font-family: var(--font-serif);
+  font-weight: 320;
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  font-feature-settings: "kern", "liga", "lnum";
+}
+
+.t-h2 {
+  font-family: var(--font-serif);
+  font-weight: 330;
+  font-size: var(--fs-h2);
+  line-height: 0.96;
+  letter-spacing: -0.012em;
+}
+
+.t-h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.004em;
+}
+
+/* Italic serif: the "intuitive" voice inside a structured sentence. */
+.t-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 360;
+  letter-spacing: -0.01em;
+}
+
+.t-lead {
+  font-size: var(--fs-lead);
+  line-height: 1.42;
+  font-weight: 340;
+  letter-spacing: -0.006em;
+  color: var(--text);
+}
+
+/* Mono voice: indices, metadata, technical labels. */
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  font-feature-settings: "zero" 0;
+}
+
+.t-mono-plain {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.01em;
+}
+
+.t-muted {
+  color: var(--text-2);
+}
+
+.t-faint {
+  color: var(--text-3);
+}
+
+/* Cyrillic sets wider and taller: tighten the display scale a little. */
+:lang(ru) .t-display {
+  font-size: calc(var(--fs-display) * 0.86);
+  line-height: 0.95;
+}
+:lang(ru) .t-h2 {
+  font-size: calc(var(--fs-h2) * 0.88);
+}

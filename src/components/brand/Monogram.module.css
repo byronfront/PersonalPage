@@ -1,0 +1,69 @@
+.mark {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+}
+
+.joint {
+  fill: var(--accent);
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: rotate var(--dur) var(--ease-out);
+}
+
+/* Interaction: when the parent link is hovered or focused, the strokes
+ * redraw from the joint outward and the joint turns 45°. */
+:global(a):hover .joint,
+:global(a):focus-visible .joint {
+  rotate: 45deg;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .draw .c,
+  .draw .b {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 1.6s var(--ease-in-out) forwards;
+  }
+
+  .draw .b {
+    animation-delay: 0.25s;
+  }
+
+  .draw .joint {
+    scale: 0;
+    animation: joint 0.6s var(--ease-out) 1.4s forwards;
+  }
+
+  :global(a):hover .draw .c,
+  :global(a):focus-visible .draw .c {
+    animation: redraw 0.9s var(--ease-in-out);
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes redraw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes joint {
+  to {
+    scale: 1;
+  }
+}

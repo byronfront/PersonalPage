@@ -1,0 +1,41 @@
+.main {
+  min-height: 100dvh;
+  display: grid;
+  align-content: center;
+  gap: var(--space-l);
+  padding: var(--margin);
+  max-width: var(--max);
+  margin-inline: auto;
+}
+
+.mark {
+  width: 3rem;
+}
+
+.code {
+  color: var(--accent-text);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-m);
+  border-top: 1px solid var(--line);
+}
+
+.list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 2rem;
+  padding-top: var(--space-m);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--space-m);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h3);
+  font-weight: 340;
+  line-height: 1.05;
+}

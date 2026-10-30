@@ -1,0 +1,163 @@
+/* Layout primitives ------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--margin);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.04em;
+  color: var(--c-carbon);
+  background: var(--c-ivory);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+main:focus {
+  outline: none;
+}
+
+/* Hairline rules ----------------------------------------------------- */
+
+.rule {
+  display: block;
+  height: 1px;
+  border: 0;
+  background: var(--line);
+  transform-origin: left center;
+}
+
+.rule--strong {
+  background: var(--line-strong);
+}
+
+/* Links --------------------------------------------------------------- */
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 0.08em;
+  transition:
+    background-size var(--dur) var(--ease-out),
+    color var(--dur-fast) linear;
+}
+
+.link:hover {
+  color: var(--accent-text);
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+}
+
+/* Scroll reveal ------------------------------------------------------- *
+ * Content is only hidden when JavaScript is running (html.js) and the
+ * visitor accepts motion. Without JS everything is visible.            */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+    transition:
+      opacity var(--dur-slow) var(--ease-out),
+      transform var(--dur-slow) var(--ease-out);
+    transition-delay: calc(var(--reveal-i, 0) * 90ms);
+  }
+
+  .js [data-reveal="rule"] {
+    opacity: 1;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 1.3s var(--ease-in-out);
+  }
+
+  /* Headlines: the heading is observed (an element clipped to zero area
+   * never intersects), its lines unmask one after another. */
+  .js [data-reveal="lines"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js [data-reveal="lines"] [data-line] {
+    clip-path: inset(0 0 100% 0);
+    transform: translate3d(0, 0.3em, 0);
+    transition:
+      clip-path 1.1s var(--ease-out),
+      transform 1.1s var(--ease-out);
+    transition-delay: calc(var(--reveal-i, 0) * 110ms);
+  }
+
+  .js [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js [data-reveal="lines"].is-in [data-line] {
+    clip-path: inset(0 0 -0.25em 0);
+    transform: none;
+  }
+}
+
+/* Structure mode ------------------------------------------------------ *
+ * Toggled from the header. Reveals the grid and type specifications.   */
+
+[data-spec] {
+  position: relative;
+}
+
+[data-structure="on"] [data-spec] {
+  outline: 1px dashed rgb(200 138 99 / 0.55);
+  outline-offset: 6px;
+}
+
+[data-structure="on"] [data-spec]::after {
+  content: attr(data-spec);
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin-bottom: 10px;
+  padding: 2px 6px;
+  font: 400 10px/1.4 var(--font-mono);
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  white-space: nowrap;
+  color: var(--c-carbon);
+  background: var(--c-copper-text);
+  pointer-events: none;
+  z-index: 5;
+}

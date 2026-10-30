@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+  html, body { margin: 0; background: #000; }
+  iframe { display: block; border: 0; }
+</style>
+</head>
+<body>
+<script>
+  // /__qa/?w=375&h=900&p=/es/&s=about
+  const q = new URLSearchParams(location.search);
+  const f = document.createElement("iframe");
+  f.width = q.get("w") || "375";
+  f.height = q.get("h") || "900";
+  f.src = q.get("p") || "/es/";
+  f.onload = () => {
+    const doc = f.contentDocument;
+    const s = q.get("s");
+    doc.documentElement.style.scrollBehavior = "auto";
+    if (q.get("structure")) doc.documentElement.setAttribute("data-structure", "on");
+    if (s) {
+      const el = doc.getElementById(s);
+      if (el) f.contentWindow.scrollTo(0, el.getBoundingClientRect().top + f.contentWindow.scrollY - Number(q.get("o") || 0));
+    }
+  };
+  document.body.appendChild(f);
+</script>
+</body>
+</html>

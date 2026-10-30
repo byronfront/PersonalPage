@@ -1,0 +1,32 @@
+{
+  "name": "byron-cardona-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Byron Cardona — Frontend Developer. Portafolio editorial estático (es / en / ru).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/verify-export.mjs",
+    "build:only": "next build",
+    "preview": "node scripts/serve-out.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.3",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
+

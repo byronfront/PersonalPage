@@ -1,0 +1,431 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  background: rgb(23 23 21 / 0.97);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gutter);
+  height: var(--header-h);
+}
+
+/* Brand ------------------------------------------------------------- */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 0;
+}
+
+.mark {
+  width: 1.9rem;
+  flex: none;
+  color: var(--text);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.given {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 420;
+  letter-spacing: -0.005em;
+}
+
+.family {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 560;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Desktop index ----------------------------------------------------- */
+
+.nav {
+  display: none;
+}
+
+.list {
+  display: flex;
+  gap: clamp(1rem, 1.6vw, 2rem);
+}
+
+.item {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45em;
+  padding-block: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 440;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color var(--dur-fast) linear;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.45rem;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.item:hover,
+.item[aria-current] {
+  color: var(--text);
+}
+
+.item:hover::after,
+.item[aria-current]::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+
+.item[aria-current] .index {
+  color: var(--accent-text);
+}
+
+/* Tools ------------------------------------------------------------- */
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.4vw, 1.5rem);
+  flex: none;
+}
+
+.tools > :global(button[aria-pressed]) {
+  display: none;
+}
+
+.current {
+  display: none;
+  align-items: baseline;
+  gap: 0.5em;
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+
+.currentLabel {
+  animation: swap 0.5s var(--ease-out);
+}
+
+@keyframes swap {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+}
+
+.langs {
+  display: none;
+  gap: 0.125rem;
+}
+
+.lang {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition:
+    color var(--dur-fast) linear,
+    background-color var(--dur-fast) linear;
+}
+
+.lang:hover {
+  color: var(--text);
+}
+
+.lang[aria-current] {
+  color: var(--c-carbon);
+  background: var(--text);
+}
+
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding-inline: 0.25rem;
+  flex: none;
+}
+
+.menuLabel {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.burger {
+  display: grid;
+  gap: 6px;
+  width: 22px;
+}
+
+.burger span {
+  display: block;
+  height: 1px;
+  background: currentColor;
+}
+
+.burger span:last-child {
+  width: 60%;
+  justify-self: end;
+  transition: width var(--dur) var(--ease-out);
+}
+
+.menuButton:hover .burger span:last-child {
+  width: 100%;
+}
+
+/* Scroll progress: the hairline under the header fills with copper.
+ * Pure CSS scroll-driven animation; browsers without support keep the
+ * neutral hairline. */
+.progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .progress {
+      animation: progress linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
+@keyframes progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Breakpoints ------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  .family,
+  .menuLabel {
+    display: inline;
+  }
+}
+
+@media (min-width: 640px) {
+  .current {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .langs {
+    display: flex;
+  }
+}
+
+@media (min-width: 1180px) {
+  .nav {
+    display: block;
+  }
+
+  .current,
+  .menuButton {
+    display: none;
+  }
+
+  .tools > :global(button[aria-pressed]) {
+    display: inline-flex;
+  }
+}
+
+/* Index sheet (mobile / tablet) ------------------------------------- */
+
+.dialog {
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  background: var(--c-carbon-deep);
+  overscroll-behavior: contain;
+}
+
+.dialog::backdrop {
+  background: rgb(18 18 16 / 0.6);
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 0 var(--margin) max(var(--margin), env(safe-area-inset-bottom));
+}
+
+.sheetTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+  border-bottom: 1px solid var(--line);
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cross {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  rotate: 45deg;
+}
+
+.cross::after {
+  rotate: -45deg;
+}
+
+.sheetList {
+  padding-block: var(--space-l);
+}
+
+.sheetList li {
+  border-bottom: 1px solid var(--line);
+}
+
+.sheetItem {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: clamp(0.6rem, 2.2vh, 1.1rem);
+  text-decoration: none;
+}
+
+.sheetLabel {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 9vw, 3.75rem);
+  font-weight: 340;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  transition:
+    color var(--dur-fast) linear,
+    translate var(--dur) var(--ease-out);
+}
+
+.sheetItem:hover .sheetLabel,
+.sheetItem[aria-current] .sheetLabel {
+  font-style: italic;
+  translate: 0.4em 0;
+}
+
+.sheetItem[aria-current] .index {
+  color: var(--accent-text);
+}
+
+.sheetFoot {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: var(--space-m);
+}
+
+.sheetLangs {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.sheetLangs .lang {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dialog[open] .sheetList li {
+    animation: rise 0.7s var(--ease-out) both;
+    animation-delay: calc(var(--i) * 45ms + 60ms);
+  }
+
+  .dialog[open] {
+    animation: fade 0.35s var(--ease-out);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}

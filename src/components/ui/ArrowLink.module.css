@@ -1,0 +1,112 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 44px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 460;
+  letter-spacing: 0.002em;
+}
+
+.text {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 0.15em;
+  transition: background-size var(--dur) var(--ease-out);
+}
+
+.link:hover .text,
+.link:focus-visible .text {
+  background-size: 100% 1px;
+}
+
+.arrow {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  overflow: hidden;
+  transition:
+    border-color var(--dur-fast) linear,
+    background-color var(--dur) var(--ease-out),
+    color var(--dur-fast) linear;
+}
+
+.arrow svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  transition: translate var(--dur) var(--ease-out);
+}
+
+.primary .arrow {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--c-carbon);
+}
+
+.link:hover .arrow {
+  border-color: var(--accent);
+}
+
+.primary:hover .arrow {
+  background: var(--accent-text);
+  border-color: var(--accent-text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .right:hover .arrow svg {
+    animation: slide-x 0.5s var(--ease-out);
+  }
+  .down:hover .arrow svg {
+    animation: slide-y 0.5s var(--ease-out);
+  }
+  .up:hover .arrow svg {
+    animation: slide-up 0.5s var(--ease-out);
+  }
+  .out:hover .arrow svg {
+    animation: slide-out 0.5s var(--ease-out);
+  }
+}
+
+/* The arrow leaves on one side and re-enters on the other. */
+@keyframes slide-x {
+  45% {
+    translate: 140% 0;
+  }
+  46% {
+    translate: -140% 0;
+  }
+}
+@keyframes slide-y {
+  45% {
+    translate: 0 140%;
+  }
+  46% {
+    translate: 0 -140%;
+  }
+}
+@keyframes slide-up {
+  45% {
+    translate: 0 -140%;
+  }
+  46% {
+    translate: 0 140%;
+  }
+}
+@keyframes slide-out {
+  45% {
+    translate: 140% -140%;
+  }
+  46% {
+    translate: -140% 140%;
+  }
+}

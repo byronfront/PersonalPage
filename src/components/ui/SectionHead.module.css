@@ -1,0 +1,29 @@
+.head {
+  margin-bottom: var(--space-xl);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-top: 0.875rem;
+}
+
+.label {
+  display: inline-flex;
+  gap: 0.6em;
+  color: var(--text-2);
+}
+
+.index {
+  color: var(--accent-text);
+}
+
+.slash {
+  color: var(--text-3);
+}
+
+.aside {
+  text-align: right;
+}
